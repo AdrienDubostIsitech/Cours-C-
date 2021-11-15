@@ -1,19 +1,32 @@
 #include <iostream>
 
+enum class ChoixMenu
+{
+    JOUER = 'j',
+    QUITTER = 'q',
+    INCORRECT,
+    EXIT_SUCCESS,
+    EXIT_FAILURE
+};
+
 using namespace std;
 
-int main()
-{
 
+const auto BORNE_MAX(10'000);
+const auto BORNE_MIN(0);
+
+
+void Menu()
+{
     cout << "Bienvenue au juste prix" << endl;
-    cout << "j: jouer" << endl;
-    cout << "q: quitter" << endl;
-    auto choix{'j'}; // autre type, apostrophe simple caractère
-    cin >> choix;
-    switch (choix)
-    {
-    case 'j':
-        cout << "C'est parti ! " << endl;
+    cout << static_cast<char>(ChoixMenu::JOUER) << ": pour Jouer" << endl;
+    cout <<  static_cast<char>(ChoixMenu::QUITTER) << ": pour Quitter" <<endl;
+}
+
+
+ void Play()
+ {
+    cout << "C'est parti ! " << endl;
         for (auto aDeviner : {208, 42, 1984})
         {
             auto proposition{0};
@@ -21,7 +34,7 @@ int main()
             do
             {
                 cin >> proposition;
-                if (proposition >= 0 && proposition < 10'000)
+                if (proposition >= BORNE_MIN && proposition < BORNE_MAX)
                 {
                     nombreTentatives++;
                     if (proposition == aDeviner)
@@ -48,12 +61,50 @@ int main()
                 cout << "partie abandonnée ";
             }
         }
-        break;
 
-        default :
-        cout << "Au revoir " << endl;
-            break;
+ }
+ void Exit()
+ {
+    cout << "je quitte le jeu " << endl;
+        system("pause");
+ }
 
 
+
+
+
+void GameChoice()
+{
+    auto choix{ChoixMenu::JOUER}; // autre type, apostrophe simple caractère)
+    char saisiechoix;
+    cin >> saisiechoix;
+
+    if(saisiechoix == static_cast<char>(ChoixMenu::JOUER) || saisiechoix == static_cast<char>(ChoixMenu::QUITTER))
+    {
+        choix =static_cast<ChoixMenu>(saisiechoix);
     }
+    else
+    {
+        choix = ChoixMenu::INCORRECT;
+    }
+    switch (choix)
+    {
+    case ChoixMenu::JOUER :
+        Play();
+        break;
+    case ChoixMenu::QUITTER :
+        Exit();
+        break;
+    case ChoixMenu::INCORRECT :
+        break;
+    }
+}
+
+
+
+int main()
+{
+    Menu();
+    GameChoice();
+
 }
