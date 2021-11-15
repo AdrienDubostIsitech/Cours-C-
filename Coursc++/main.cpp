@@ -3,17 +3,18 @@
 using namespace std;
 int main()
 {
-    //Ceci est un commentaire
-    cout << " Bienvenue au Juste Prix ! " << endl;
-    //Déclaration Int
-    int integer(43);
-    auto numero(4'000'000'000'000'000);
-    cout<<integer<<endl;
-    cout << numero << endl;
-    int GuessNumber{0};
-    cin >> GuessNumber;
-    cout << GuessNumber << endl;
+    int GuessNumber{2};
+    int PlayerAnswer{0};
 
-    return 0;
-
+    cout<< "Bienvenue au Juste Prix" << endl;
+    cout<< "Devinez le prix d'un pain au chocolat : " << endl;
+    cin >> PlayerAnswer;
+    if(PlayerAnswer == GuessNumber)
+    {
+        cout<< " C'est gagne !" << endl;
+    }
+    else
+    {
+        cout<< " C'est perdu !"<< endl;
+    }
 }
