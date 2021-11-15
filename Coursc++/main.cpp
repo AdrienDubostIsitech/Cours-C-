@@ -94,10 +94,6 @@ void PlayParty(int aDeviner)
         system("pause");
  }
 
-
-
-
-
 void GameChoice()
 {
 
@@ -110,17 +106,20 @@ void GameChoice()
         Exit();
         break;
     case ChoixMenu::INCORRECT :
+        return EXIT_FAILURE;
         break;
     default:
         break;
     }
+    return EXIT_SUCCESS;
 }
 
 
 
 int main()
 {
+    cout << EXIT_FAILURE << endl;
+    cout << EXIT_SUCCESS << endl;
     Menu();
     GameChoice();
-
 }
