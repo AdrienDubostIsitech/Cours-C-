@@ -14,9 +14,10 @@ const auto BORNE_MAX(10'000);
 const auto BORNE_MIN(0);
 
 void Menu();
-void Play();
+void PlayThreeParty();
 void Exit();
 void GameChoice();
+void PlayParty(int);
 ChoixMenu PlayerMenuChoice();
 
 void Menu()
@@ -47,28 +48,35 @@ ChoixMenu PlayerMenuChoice()
     cout << "C'est parti ! " << endl;
         for (auto aDeviner : {208, 42, 1984})
         {
-            auto proposition{0};
-            auto nombreTentatives{0};
-            do
+            PlayParty(aDeviner);
+        }
+
+ }
+
+void PlayParty(int aDeviner)
+{
+     auto proposition{0};
+     auto nombreTentatives{0};
+     do
+     {
+        cin >> proposition;
+        if (proposition >= BORNE_MIN && proposition < BORNE_MAX)
+        {
+            nombreTentatives++;
+            if (proposition == aDeviner)
             {
-                cin >> proposition;
-                if (proposition >= BORNE_MIN && proposition < BORNE_MAX)
-                {
-                    nombreTentatives++;
-                    if (proposition == aDeviner)
-                    {
-                        cout << "Bravo! " << endl;
-                    }
-                    else if (proposition > aDeviner)
-                    {
-                        cout << "C'est moins ! " << endl;
-                    }
-                    else
-                    {
-                        cout << "C'est plus ! " << endl;
-                    }
-                }
+                cout << "Bravo! " << endl;
             }
+            else if (proposition > aDeviner)
+            {
+                cout << "C'est moins ! " << endl;
+            }
+            else
+            {
+                cout << "C'est plus ! " << endl;
+            }
+        }
+     }
             while (proposition != aDeviner);
             if (proposition == aDeviner)
             {
@@ -78,9 +86,8 @@ ChoixMenu PlayerMenuChoice()
             {
                 cout << "partie abandonnée ";
             }
-        }
 
- }
+}
  void Exit()
  {
     cout << "je quitte le jeu " << endl;
@@ -97,7 +104,7 @@ void GameChoice()
     switch (PlayerMenuChoice())
     {
     case ChoixMenu::JOUER :
-        Play();
+        PlayThreeParty();
         break;
     case ChoixMenu::QUITTER :
         Exit();
