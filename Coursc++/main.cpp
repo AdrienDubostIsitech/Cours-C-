@@ -8,13 +8,31 @@ int main()
 
     cout<< "Bienvenue au Juste Prix" << endl;
     cout<< "Devinez le prix d'un pain au chocolat : " << endl;
-    cin >> PlayerAnswer;
-    if(PlayerAnswer == GuessNumber)
+
+
+    while(PlayerAnswer != GuessNumber)
     {
-        cout<< " C'est gagne !" << endl;
+        cin >> PlayerAnswer;
+        if(PlayerAnswer < GuessNumber)
+        {
+            cout << "C'est plus ! " << endl;
+        }
+        else if(PlayerAnswer > GuessNumber)
+        {
+            cout << "C'est moins !" << endl;
+        }
+        else if( PlayerAnswer == GuessNumber)
+        {
+            cout<< " C'est gagne !" << endl;
+        }
     }
-    else
-    {
-        cout<< " C'est perdu !"<< endl;
-    }
+
+    //if(PlayerAnswer == GuessNumber)
+    //{
+
+    //}
+    //else
+    //{
+       // cout<< " C'est perdu !"<< endl;
+    //}
 }
