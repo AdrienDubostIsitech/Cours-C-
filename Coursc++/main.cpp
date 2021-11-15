@@ -7,41 +7,80 @@ int main()
     int PlayerAnswer{0};
     int Try{0};
     bool win = false;
+    int NumberOfWinGame{0};
+    int NumberOfWinAsked{3};
 
     cout<< "Bienvenue au Juste Prix" << endl;
     cout<< "Devinez le prix d'un pain au chocolat : " << endl;
 
     do
     {
-        Try++;
-        cin >> PlayerAnswer;
-        if(PlayerAnswer < 10000)
+
+
+
+
+        //Check If Player Win the Game
+        if(NumberOfWinGame == NumberOfWinAsked)
         {
-            if (PlayerAnswer < 0)
-            {
-                cout<< " Un chiffre inferieur à zero a etait soumis, vous alle etre redirige hors du jeu " << endl;
-                win = true;
-            }
-            else if(PlayerAnswer < GuessNumber)
-            {
-                cout << "C'est plus ! " << endl;
-            }
-            else if(PlayerAnswer > GuessNumber)
-            {
-                cout << "C'est moins !" << endl;
-            }
-            else if( PlayerAnswer == GuessNumber)
-            {
-                cout<< " C'est gagne !" << endl;
-                win = true;
-            }
+            win = true;
         }
         else
         {
-            cout << "Ce nombre est trop grand pour etre considere" << endl;
+           //Check Player's Try
+            if(Try >= 3)
+            {
+                win = true;
+                cout << "Votre nombre de tentatives a ete de : "<< Try << endl;
+            }
+            else
+            {
+                //Player Answer
+                cin >> PlayerAnswer;
+            }
+
         }
+
+        if(win == false)
+        {
+            //Check Player Answer
+            if(PlayerAnswer < 10000)
+            {
+                if(PlayerAnswer < GuessNumber && PlayerAnswer > 0)
+                {
+                    cout << "C'est plus ! " << endl;
+                    Try++;
+                }
+                else if(PlayerAnswer > GuessNumber && PlayerAnswer > 0)
+                {
+                    cout << "C'est moins !" << endl;
+                    Try++;
+                }
+                else if( PlayerAnswer == GuessNumber && PlayerAnswer > 0)
+                {
+                    cout<< " C'est gagne !" << endl;
+                    NumberOfWinGame ++;
+                    Try++;
+                    cout << "Votre nombre de tentatives a ete de : "<< Try << endl;
+                    Try = 0;
+                    GuessNumber += 1;
+                    //win = true;
+                }
+                else
+                {
+                    cout<< " Un chiffre inferieur a zero a etait soumis, vous alle etre redirige hors du jeu " << endl;
+                    win = true;
+                }
+            }
+            else
+            {
+                cout << "Ce nombre est trop grand pour etre considere" << endl;
+                Try++;
+            }
+        }
+
     }
     while(win == false);
 
-    cout << "Votre nombre de tentatives a ete de : "<< Try << endl;
+    cout << "Bravo vous etes le grand champion du juste prix " << endl;
+
 }
