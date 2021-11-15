@@ -5,8 +5,6 @@ enum class ChoixMenu
     JOUER = 'j',
     QUITTER = 'q',
     INCORRECT,
-    EXIT_SUCCESS,
-    EXIT_FAILURE
 };
 
 using namespace std;
@@ -15,6 +13,11 @@ using namespace std;
 const auto BORNE_MAX(10'000);
 const auto BORNE_MIN(0);
 
+void Menu();
+void Play();
+void Exit();
+void GameChoice();
+ChoixMenu PlayerMenuChoice();
 
 void Menu()
 {
@@ -23,8 +26,23 @@ void Menu()
     cout <<  static_cast<char>(ChoixMenu::QUITTER) << ": pour Quitter" <<endl;
 }
 
+ChoixMenu PlayerMenuChoice()
+{
+    auto choix{ChoixMenu::JOUER}; // autre type, apostrophe simple caractère)
+    char saisiechoix;
+    cin >> saisiechoix;
 
- void Play()
+    if(saisiechoix == static_cast<char>(ChoixMenu::JOUER) || saisiechoix == static_cast<char>(ChoixMenu::QUITTER))
+    {
+       return  choix =static_cast<ChoixMenu>(saisiechoix);
+    }
+    else
+    {
+       return choix = ChoixMenu::INCORRECT;
+    }
+
+}
+ void PlayThreeParty()
  {
     cout << "C'est parti ! " << endl;
         for (auto aDeviner : {208, 42, 1984})
@@ -75,19 +93,8 @@ void Menu()
 
 void GameChoice()
 {
-    auto choix{ChoixMenu::JOUER}; // autre type, apostrophe simple caractère)
-    char saisiechoix;
-    cin >> saisiechoix;
 
-    if(saisiechoix == static_cast<char>(ChoixMenu::JOUER) || saisiechoix == static_cast<char>(ChoixMenu::QUITTER))
-    {
-        choix =static_cast<ChoixMenu>(saisiechoix);
-    }
-    else
-    {
-        choix = ChoixMenu::INCORRECT;
-    }
-    switch (choix)
+    switch (PlayerMenuChoice())
     {
     case ChoixMenu::JOUER :
         Play();
@@ -96,6 +103,8 @@ void GameChoice()
         Exit();
         break;
     case ChoixMenu::INCORRECT :
+        break;
+    default:
         break;
     }
 }
