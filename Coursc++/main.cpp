@@ -46,7 +46,7 @@ ChoixMenu PlayerMenuChoice()
  void PlayThreeParty()
  {
     cout << "C'est parti ! " << endl;
-        for (auto aDeviner : {208, 42, 1984})
+        for (auto aDeviner : {rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1})
         {
             PlayParty(aDeviner);
         }
