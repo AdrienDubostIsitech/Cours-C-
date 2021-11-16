@@ -1,107 +1,23 @@
 #include <iostream>
 #include <array>
 #include <time.h>
+#include <string>
 #include "WordList.h"
+#include "Jeu.h"
 
 using namespace std;
 
 int NumberOfLetter {0};
 int LetterFound{0};
-int NumberError{0};
 bool win = false;
 
-void DessinPendu()
-{
-    switch(NumberError)
-    {
-    case 1:
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        cout << endl;
-        cout<<" -- "<<endl;
-        break;
-    case 2 :
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 3:
-        cout <<  "------- "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 4:
-       cout <<  "------- "<<endl;
-        cout << " |/ "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 5:
-        cout <<  "------- "<<endl;
-        cout << " |/    |"<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 6:
-        cout <<  "------- "<<endl;
-        cout << " |/    |"<<endl;
-        cout << " |     o"<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 7:
-        cout <<  "------- "<<endl;
-        cout << " |/    |"<<endl;
-        cout << " |     o"<<endl;
-        cout << " |     |"<<endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 8:
-        cout <<  "------- "<<endl;
-        cout << " |/    |"<<endl;
-        cout << " |     o"<<endl;
-        cout << " |    /|/"<< endl;
-        cout << " | "<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    case 9:
-        cout <<  "------- "<<endl;
-        cout << " |/    |"<<endl;
-        cout << " |     o"<<endl;
-        cout << " |    /|/"<<endl;
-        cout << " |    / /"<<endl;
-        cout << " | "<<endl;
-        cout << "-|- "<<endl;
-        break;
-    }
-}
+
 
 int main()
 {
     cout <<"---------------------------------------- Bienvenue au Pendu ! --------------------------------------------------"<< endl;
     cout<< "----------------------------Un mot a ete choisi voici son nombre de lettre : ------------------------------------" << endl;
 
-    DessinPendu();
     srand(time(NULL));
     auto ChooseWordIndex{0};
     std::string ChoosenWord;
@@ -112,9 +28,9 @@ int main()
     cout << WordList[ChooseWordIndex] << endl;
     cout << endl;
     ChoosenWord = WordList[ChooseWordIndex];
-    NumberOfLetter = ChoosenWord.size();
-    int LetterList[ChoosenWord.size()];
-    for(int j = 0; j < ChoosenWord.size(); j++)
+    NumberOfLetter = ChoosenWord.length();
+    int LetterList[NumberOfLetter];
+    for(int j = 0; j < NumberOfLetter; j++)
     {
             cout<<" -- ";
     }
@@ -124,7 +40,7 @@ int main()
         char PlayerProposition;
         cout<< "Choisissez une lettre : ";
         cin >> PlayerProposition;
-        for(int i = 0; i < ChoosenWord.size(); i++)
+        for(int i = 0; i < NumberOfLetter; i++)
         {
             if(PlayerProposition == ChoosenWord[i] && LetterList[i] != 1)
             {
@@ -149,7 +65,7 @@ int main()
             NumberError++;
             DessinPendu();
         }
-        if(NumberError == 9)
+        if(MAX_NUMBER_ERROR == 9)
         {
             win = true;
             cout << endl;

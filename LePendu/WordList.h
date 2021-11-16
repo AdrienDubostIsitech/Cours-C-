@@ -2,6 +2,9 @@
 #define WORDLIST_H_INCLUDED
 #include<string>
 
+
+    const auto MAX_NUMBER_ERROR{9};
+
     const auto NOMBRE_MOT {5};
     const auto GestionWord = std::string{"gestion"};
     const auto EntrepriseWord = std::string{"entreprise"};
