@@ -1,4 +1,5 @@
 #include "jeu.h"
+#include "Menu.h"
 #include "constantes.h"
 #include <iostream>
 using namespace std;
@@ -12,11 +13,13 @@ void DemanderChoix(int &proposition)
 void PlayThreeParty(int BORNE_MIN, int BORNE_MAX, int BORNE_RANDOM)
  {
     cout << "C'est parti ! " << endl;
-        for (auto aDeviner : {rand() % BORNE_RANDOM, rand() % BORNE_RANDOM, rand() % BORNE_RANDOM})
-        {
-            PlayParty(aDeviner, BORNE_MIN, BORNE_MAX);
-        }
-
+    bool End = false;
+    while(End == false)
+    {
+        auto aDeviner = rand() % BORNE_RANDOM;
+        PlayParty(aDeviner, BORNE_MIN, BORNE_MAX);
+        RetryOrQuit(End);
+    }
  }
 
 void PlayParty(int aDeviner, int BORNE_MIN, int BORNE_MAX)

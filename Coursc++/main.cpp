@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 #include "time.h"
 #include "constantes.h"
 #include "jeu.h"
@@ -6,14 +7,18 @@
 
 using namespace std;
 
+//array<int, cte> scores{1, 2, 3};
+//scores[0];
 
 int main()
 {
+
+
     srand(time(NULL));
     Menu();
     switch (PlayerMenuChoice())
     {
-    case ChoixMenu::JOUER :
+    case ChoixMenu::JOUER:
         PlayThreeParty(BORNE_MIN_MOYEN, BORNE_MAX_MOYEN, BORNE_RANDOM_MOYEN);
         break;
     case ChoixMenu::JOUER_DIFFICILE :
@@ -28,6 +33,8 @@ int main()
     case ChoixMenu::INCORRECT :
         return EXIT_FAILURE;
         break;
+    case ChoixMenu::REJOUER :
+         break;
     default:
         break;
     }

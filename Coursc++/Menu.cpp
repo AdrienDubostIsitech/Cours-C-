@@ -30,3 +30,25 @@ ChoixMenu PlayerMenuChoice()
     }
 
 }
+
+void RetryOrQuit(bool &Quit)
+{
+    cout << static_cast<char>(ChoixMenu::REJOUER) << ": pour Rejouer" << endl;
+    cout <<  static_cast<char>(ChoixMenu::QUITTER) << ": pour Quitter" <<endl;
+    char saisiechoix;
+    cin >> saisiechoix;
+    if(saisiechoix == static_cast<char>(ChoixMenu::REJOUER))
+    {
+          Quit = false;
+    }
+    else if( saisiechoix == static_cast<char>(ChoixMenu::QUITTER))
+    {
+         Quit = true;
+    }
+    else
+    {
+         RetryOrQuit(Quit);
+    }
+
+
+}

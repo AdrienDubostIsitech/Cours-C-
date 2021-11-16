@@ -7,9 +7,13 @@ enum class ChoixMenu
     QUITTER = 'q',
     JOUER_DIFFICILE = 'd',
     JOUER_FACILE = 'f',
+    REJOUER = 'r',
     INCORRECT,
 };
 
 void Menu();
 ChoixMenu PlayerMenuChoice();
+void RetryOrQuit(bool &quit);
+void Score();
+
 #endif // MENU_H_INCLUDED
