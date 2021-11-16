@@ -11,27 +11,25 @@ bool win = false;
 
 int main()
 {
-    cout <<" Bienvenue au Pendu ! "<< endl;
-    cout<< "Un mot a été choisi voici son nombre de lettre : " << endl;
+    cout <<"---------------------------------------- Bienvenue au Pendu ! --------------------------------------------------"<< endl;
+    cout<< "----------------------------Un mot a ete choisi voici son nombre de lettre : ------------------------------------" << endl;
+
+
     srand(time(NULL));
-    int ChooseWordIndex{0};
+    auto ChooseWordIndex{0};
     std::string ChoosenWord;
     array<std::string, NOMBRE_MOT> WordList {GestionWord, EntrepriseWord, VoitureWord, ChevalWord, CroquetteWord};
 
     ChooseWordIndex = rand() % WordList.size();
-    for(int i = 0;  i < WordList.size() ; i++)
-    {
-            cout << WordList[i] << "    ";
-    }
     cout << endl;
     cout << WordList[ChooseWordIndex] << endl;
+    cout << endl;
     ChoosenWord = WordList[ChooseWordIndex];
+    NumberOfLetter = ChoosenWord.size();
     int LetterList[ChoosenWord.size()];
-    cout << ChoosenWord.size() << endl;
     for(int j = 0; j < ChoosenWord.size(); j++)
     {
-        LetterList[j] = 0;
-        cout<< LetterList[j];
+            cout<<" -- ";
     }
     while(win == false)
     {
@@ -42,6 +40,7 @@ int main()
             if(PlayerProposition == ChoosenWord[i])
             {
                 LetterList[i] = 1;
+                LetterFound++;
                 cout << " "<<ChoosenWord[i]<< " ";
             }
             else if (LetterList[i] == 1)
@@ -52,6 +51,12 @@ int main()
             {
                     cout << " -- ";
             }
+        }
+        if(LetterFound == NumberOfLetter)
+        {
+            win = true;
+            cout << endl;
+            cout << "Vous avez gagné ! "<< endl;
         }
     }
     return 0;
