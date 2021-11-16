@@ -1,18 +1,22 @@
 # depslib dependency file v1.0
-1637075007 source:c:\users\adrie\documents\cours_isitech\lependu\main.cpp
+1637078683 source:c:\users\adrie\documents\cours_isitech\lependu\main.cpp
 	<iostream>
 	<array>
 	<time.h>
 	<string>
 	"WordList.h"
+	"Jeu.h"
 
 1637075204 c:\users\adrie\documents\cours_isitech\lependu\wordlist.h
 	<string>
 
-1637075295 source:c:\users\adrie\documents\cours_isitech\lependu\jeu.cpp
+1637079364 source:c:\users\adrie\documents\cours_isitech\lependu\jeu.cpp
 	<iostream>
 	"Jeu.h"
 	"WordList.h"
+	<array>
 
-1637075126 c:\users\adrie\documents\cours_isitech\lependu\jeu.h
+1637078634 c:\users\adrie\documents\cours_isitech\lependu\jeu.h
+	<string_view>
+	<string>
 
