@@ -16,7 +16,6 @@ const auto BORNE_MIN(0);
 void Menu();
 void PlayThreeParty();
 void Exit();
-void GameChoice();
 void PlayParty(int);
 ChoixMenu PlayerMenuChoice();
 
@@ -94,9 +93,11 @@ void PlayParty(int aDeviner)
         system("pause");
  }
 
-void GameChoice()
+int main()
 {
-
+    cout << EXIT_FAILURE << endl;
+    cout << EXIT_SUCCESS << endl;
+    Menu();
     switch (PlayerMenuChoice())
     {
     case ChoixMenu::JOUER :
@@ -112,14 +113,4 @@ void GameChoice()
         break;
     }
     return EXIT_SUCCESS;
-}
-
-
-
-int main()
-{
-    cout << EXIT_FAILURE << endl;
-    cout << EXIT_SUCCESS << endl;
-    Menu();
-    GameChoice();
 }
