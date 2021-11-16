@@ -2,6 +2,8 @@
 #include "Jeu.h"
 #include "WordList.h"
 #include <array>
+#include <chrono>
+
 
 using namespace std;
 
@@ -100,6 +102,10 @@ void PlayerPropositionFunc(char &PlayerProposition)
 }
 void GameLoop(int LetterFound, int NumberOfLetter, bool &End, int &NumberError)
 {
+
+    using Duree = std::chrono::duration<double>;
+    auto DebutDePartie = std::chrono::system_clock::now();
+
     std::string ChoosenWord = ChooseAWord(NumberOfLetter);
     int LetterList[NumberOfLetter];
     for(int i = 0; i < sizeof(LetterList)/sizeof(LetterList[0]); i ++)
@@ -152,7 +158,9 @@ void GameLoop(int LetterFound, int NumberOfLetter, bool &End, int &NumberError)
         }
 
     }
-
+    auto FinDePartie = std::chrono::system_clock::now();
+    auto duree = std::chrono::duration_cast<Duree>(FinDePartie - DebutDePartie);
+    cout << " Vous avez termine votre partie en :" << duree.count() << "s" << endl;
 }
 std::string ChooseAWord(int &NumberOfLetter)
 {
@@ -169,7 +177,7 @@ std::string ChooseAWord(int &NumberOfLetter)
     NumberOfLetter = ChoosenWord.length();
     cout<< NumberOfLetter<<endl;
 
-    for(int j = 0; j < ChoosenWord.length(); j++)
+    for(int j = 0; j < sizeof(ChoosenWord)/sizeof(ChoosenWord[0]); j++)
     {
             cout<<" -- ";
     }

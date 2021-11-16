@@ -20,7 +20,6 @@ int main()
     cout <<"---------------------------------------- Bienvenue au Pendu ! --------------------------------------------------"<< endl;
     cout<< "----------------------------Un mot a ete choisi voici son nombre de lettre : ------------------------------------" << endl;
 
-
     GameLoop(LetterFound, NumberOfLetter, win, NumberError);
 
         return 0;
