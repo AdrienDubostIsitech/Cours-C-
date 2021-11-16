@@ -8,5 +8,9 @@
     const auto BORNE_MAX_FACILE{1000};
     const auto BORNE_MIN_FACILE{0};
 
+    const auto BORNE_RANDOM_MOYEN{51};
+    const auto BORNE_RANDOM_FACILE{11};
+    const auto BORNE_RANDOM_DIFFICILE{101};
+
 
 #endif // CONSTANTES_H_INCLUDED

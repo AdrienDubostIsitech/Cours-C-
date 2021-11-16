@@ -9,10 +9,10 @@ void DemanderChoix(int &proposition)
      cin >> proposition;
 }
 
-void PlayThreeParty(int BORNE_MIN, int BORNE_MAX)
+void PlayThreeParty(int BORNE_MIN, int BORNE_MAX, int BORNE_RANDOM)
  {
     cout << "C'est parti ! " << endl;
-        for (auto aDeviner : {rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1})
+        for (auto aDeviner : {rand() % BORNE_RANDOM, rand() % BORNE_RANDOM, rand() % BORNE_RANDOM})
         {
             PlayParty(aDeviner, BORNE_MIN, BORNE_MAX);
         }
