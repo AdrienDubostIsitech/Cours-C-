@@ -3,7 +3,6 @@
 #include<string>
 
     const auto NOMBRE_MOT {5};
-
     const auto GestionWord = std::string{"gestion"};
     const auto EntrepriseWord = std::string{"entreprise"};
     const auto VoitureWord = std::string{"voiture"};
