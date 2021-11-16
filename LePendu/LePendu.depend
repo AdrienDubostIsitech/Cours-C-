@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1637067111 source:c:\users\adrie\documents\cours_isitech\lependu\main.cpp
+	<iostream>
+	<array>
+	"WordList.h"
+
+1637066866 c:\users\adrie\documents\cours_isitech\lependu\wordlist.h
+	<string>
+
