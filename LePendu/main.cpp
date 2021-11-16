@@ -5,6 +5,10 @@
 
 using namespace std;
 
+int NumberOfLetter {0};
+int LetterFound{0};
+bool win = false;
+
 int main()
 {
     cout <<" Bienvenue au Pendu ! "<< endl;
@@ -13,6 +17,7 @@ int main()
     int ChooseWordIndex{0};
     std::string ChoosenWord;
     array<std::string, NOMBRE_MOT> WordList {GestionWord, EntrepriseWord, VoitureWord, ChevalWord, CroquetteWord};
+
     ChooseWordIndex = rand() % WordList.size();
     for(int i = 0;  i < WordList.size() ; i++)
     {
@@ -21,11 +26,33 @@ int main()
     cout << endl;
     cout << WordList[ChooseWordIndex] << endl;
     ChoosenWord = WordList[ChooseWordIndex];
-    cout << ChoosenWord << endl;
+    int LetterList[ChoosenWord.size()];
+    cout << ChoosenWord.size() << endl;
     for(int j = 0; j < ChoosenWord.size(); j++)
     {
-            cout << " -- ";
+        LetterList[j] = 0;
+        cout<< LetterList[j];
     }
-
+    while(win == false)
+    {
+        char PlayerProposition;
+        cin >> PlayerProposition;
+        for(int i = 0; i < ChoosenWord.size(); i++)
+        {
+            if(PlayerProposition == ChoosenWord[i])
+            {
+                LetterList[i] = 1;
+                cout << " "<<ChoosenWord[i]<< " ";
+            }
+            else if (LetterList[i] == 1)
+            {
+                cout << " "<<ChoosenWord[i]<< " ";
+            }
+            else
+            {
+                    cout << " -- ";
+            }
+        }
+    }
     return 0;
 }

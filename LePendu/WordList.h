@@ -4,11 +4,11 @@
 
     const auto NOMBRE_MOT {5};
 
-    const auto GestionWord = std::string{"Gestion"};
-    const auto EntrepriseWord = std::string{"Entreprise"};
-    const auto VoitureWord = std::string{"Voiture"};
-    const auto ChevalWord = std::string{"Cheval"};
-    const auto CroquetteWord = std::string{"Croquette"};
+    const auto GestionWord = std::string{"gestion"};
+    const auto EntrepriseWord = std::string{"entreprise"};
+    const auto VoitureWord = std::string{"voiture"};
+    const auto ChevalWord = std::string{"cheval"};
+    const auto CroquetteWord = std::string{"croquette"};
 
 
 #endif // WORDLIST_H_INCLUDED
