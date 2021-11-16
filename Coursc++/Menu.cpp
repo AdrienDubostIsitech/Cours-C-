@@ -49,6 +49,4 @@ void RetryOrQuit(bool &Quit)
     {
          RetryOrQuit(Quit);
     }
-
-
 }
