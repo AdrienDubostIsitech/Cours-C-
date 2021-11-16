@@ -11,7 +11,7 @@ void Menu()
     cout <<  static_cast<char>(ChoixMenu::QUITTER) << ": pour Quitter" <<endl;
     cout <<  static_cast<char>(ChoixMenu::JOUER_DIFFICILE) << ": pour Jouer en Difficile" <<endl;
     cout <<  static_cast<char>(ChoixMenu::JOUER_FACILE) << ": pour Jouer en Facile" <<endl;
-    cout << static_cast<char>(ChoixMenu::AFFICHE_SCORES << ": pour Afficher les derniers scores" << endl;
+    cout << static_cast<char>(ChoixMenu::AFFICHE_SCORES) << ": pour Afficher les derniers scores" << endl;
 }
 
 
@@ -50,4 +50,8 @@ void RetryOrQuit(bool &Quit)
     {
          RetryOrQuit(Quit);
     }
+}
+void Score()
+{
+
 }

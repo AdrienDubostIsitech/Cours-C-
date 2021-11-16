@@ -12,5 +12,7 @@
     const auto BORNE_RANDOM_FACILE{11};
     const auto BORNE_RANDOM_DIFFICILE{101};
 
+    const auto NOMBRES_SCORES{3};
+
 
 #endif // CONSTANTES_H_INCLUDED

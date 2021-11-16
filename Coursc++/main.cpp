@@ -4,11 +4,11 @@
 #include "constantes.h"
 #include "jeu.h"
 #include "Menu.h"
+#include<array>
 
 using namespace std;
 
-array<int, cte> scores{1, 2, 3};
-
+std::array<int, NOMBRES_SCORES>scores{0, 0, 0};
 
 int main()
 {
@@ -28,8 +28,8 @@ int main()
         PlayThreeParty(BORNE_MIN_FACILE, BORNE_MAX_FACILE, BORNE_RANDOM_FACILE);
         break;
     case ChoixMenu::AFFICHE_SCORES :
-        TableScores();
-
+        Score();
+        break;
     case ChoixMenu::QUITTER :
         Exit();
         break;
