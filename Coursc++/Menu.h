@@ -5,6 +5,8 @@ enum class ChoixMenu
 {
     JOUER = 'j',
     QUITTER = 'q',
+    JOUER_DIFFICILE = 'd',
+    JOUER_FACILE = 'f',
     INCORRECT,
 };
 

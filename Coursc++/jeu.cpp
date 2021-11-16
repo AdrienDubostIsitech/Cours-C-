@@ -9,24 +9,24 @@ void DemanderChoix(int &proposition)
      cin >> proposition;
 }
 
-void PlayThreeParty()
+void PlayThreeParty(int BORNE_MIN, int BORNE_MAX)
  {
     cout << "C'est parti ! " << endl;
         for (auto aDeviner : {rand() % 10 + 1, rand() % 10 + 1, rand() % 10 + 1})
         {
-            PlayParty(aDeviner);
+            PlayParty(aDeviner, BORNE_MIN, BORNE_MAX);
         }
 
  }
 
-void PlayParty(int aDeviner)
+void PlayParty(int aDeviner, int BORNE_MIN, int BORNE_MAX)
 {
      auto proposition{0};
      auto nombreTentatives{0};
      do
      {
         DemanderChoix(proposition);
-        if (proposition >= BORNE_MIN_MOYEN && proposition < BORNE_MAX_MOYEN)
+        if (proposition >= BORNE_MIN && proposition < BORNE_MAX)
         {
             nombreTentatives++;
             if (proposition == aDeviner)
