@@ -7,8 +7,8 @@
 
 using namespace std;
 
-//array<int, cte> scores{1, 2, 3};
-//scores[0];
+array<int, cte> scores{1, 2, 3};
+
 
 int main()
 {
@@ -27,6 +27,9 @@ int main()
     case ChoixMenu::JOUER_FACILE :
         PlayThreeParty(BORNE_MIN_FACILE, BORNE_MAX_FACILE, BORNE_RANDOM_FACILE);
         break;
+    case ChoixMenu::AFFICHE_SCORES :
+        TableScores();
+
     case ChoixMenu::QUITTER :
         Exit();
         break;

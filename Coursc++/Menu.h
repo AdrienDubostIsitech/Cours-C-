@@ -8,6 +8,7 @@ enum class ChoixMenu
     JOUER_DIFFICILE = 'd',
     JOUER_FACILE = 'f',
     REJOUER = 'r',
+    AFFICHE_SCORES = 's'
     INCORRECT,
 };
 
