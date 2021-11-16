@@ -1,4 +1,14 @@
 # depslib dependency file v1.0
-1636993589 source:c:\users\adrie\documents\cours_isitech\coursc++\main.cpp
+1637052082 source:c:\users\adrie\documents\cours_isitech\coursc++\main.cpp
 	<iostream>
+	"constantes.h"
+	"jeu.h"
+
+1637051971 source:c:\users\adrie\documents\cours_isitech\coursc++\jeu.cpp
+	"jeu.h"
+	<iostream>
+
+1637051932 c:\users\adrie\documents\cours_isitech\coursc++\jeu.h
+
+1637051215 c:\users\adrie\documents\cours_isitech\coursc++\constantes.h
 

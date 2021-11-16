@@ -1,4 +1,6 @@
 #include <iostream>
+#include "constantes.h"
+#include "jeu.h"
 
 enum class ChoixMenu
 {
@@ -9,9 +11,8 @@ enum class ChoixMenu
 
 using namespace std;
 
-
-const auto BORNE_MAX(10'000);
-const auto BORNE_MIN(0);
+const auto BORNE_MAX {10000};
+const auto BORNE_MIN {0};
 
 void Menu();
 void PlayThreeParty();
@@ -28,7 +29,7 @@ void Menu()
 
 ChoixMenu PlayerMenuChoice()
 {
-    auto choix{ChoixMenu::JOUER}; // autre type, apostrophe simple caractère)
+    auto choix{ChoixMenu::JOUER}; // autre type, apostrophe simple caractÃ¨re)
     char saisiechoix;
     cin >> saisiechoix;
 
@@ -58,7 +59,7 @@ void PlayParty(int aDeviner)
      auto nombreTentatives{0};
      do
      {
-        cin >> proposition;
+        DemanderChoix(proposition);
         if (proposition >= BORNE_MIN && proposition < BORNE_MAX)
         {
             nombreTentatives++;
@@ -79,11 +80,11 @@ void PlayParty(int aDeviner)
             while (proposition != aDeviner);
             if (proposition == aDeviner)
             {
-               cout << "partie terminée! "<< "en " << nombreTentatives << " tentatives" << endl;
+               cout << "partie terminÃ©e! "<< "en " << nombreTentatives << " tentatives" << endl;
             }
             else
             {
-                cout << "partie abandonnée ";
+                cout << "partie abandonnÃ©e ";
             }
 
 }
