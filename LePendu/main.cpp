@@ -126,7 +126,7 @@ int main()
         cin >> PlayerProposition;
         for(int i = 0; i < ChoosenWord.size(); i++)
         {
-            if(PlayerProposition == ChoosenWord[i])
+            if(PlayerProposition == ChoosenWord[i] && LetterList[i] != 1)
             {
                 LetterList[i] = 1;
                 LetterFound++;
