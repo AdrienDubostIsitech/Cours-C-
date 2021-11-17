@@ -4,7 +4,9 @@
 
 using namespace std;
 
-
+bool End {false};
+int hauteur {1};
+int largeur {1};
 
 int main()
 {
@@ -60,7 +62,7 @@ Dungeon.resize(DungeonMap.size());
  }
 
 
-for(int i = 0; i < Dungeon.size(); i++)
+ for(int i = 0; i < Dungeon.size(); i++)
  {
      cout << endl;
     for (int j = 0; j < Dungeon[i].size(); j++)
@@ -68,5 +70,89 @@ for(int i = 0; i < Dungeon.size(); i++)
         cout << static_cast<char>(Dungeon[i][j]->Type) << "   ";
     }
  }
+
+ while (End == false)
+{
+
+        cout << " Vous etes sur la case : " << "[" <<hauteur << "]" << " " << "[" << largeur << "]" << endl;
+        cout << " Vous pouvez vous déplacer au :"<< endl;
+        if(hauteur < 2)
+        {
+            cout << "Nord," << " ";
+        }
+        if(hauteur > 0)
+        {
+            cout << "Sud," << " ";
+        }
+        if(largeur > 0)
+        {
+            cout << "Ouest," << " ";
+        }
+        if(largeur < 4)
+        {
+            cout << "Est," << " ";
+        }
+        cout << endl;
+        cout <<endl;
+        cout << "Dans quelle Direction voulez-vous aller ?" << endl;
+        char Dir;
+        cin >> Dir;
+        switch(Dir)
+        {
+        case 'N':
+            {
+                if(hauteur > 0)
+                {
+                    hauteur++;
+                    break;
+                }
+                else
+                {
+                    cout << "Vous ne pouvez pas vous déplacer dans cette direction ! " << endl;
+                    break;
+                }
+            }
+        case 'S':
+            {
+                if(hauteur < 2)
+                {
+                    hauteur--;
+                    break;
+                }
+                else
+                {
+                    cout << "Vous ne pouvez pas vous déplacer dans cette direction ! " << endl;
+                    break;
+                }
+            }
+        case 'O':
+            {
+                if(largeur > 0)
+                {
+                    largeur--;
+                    break;
+                }
+                else
+                {
+                    cout << "Vous ne pouvez pas vous déplacer dans cette direction ! " << endl;
+                    break;
+                }
+            }
+        case 'E':
+            {
+                if(largeur < 4)
+                {
+                    largeur++;
+                    break;
+                }
+                else
+                {
+                    cout << "Vous ne pouvez pas vous déplacer dans cette direction ! " << endl;
+                    break;
+                }
+            }
+        }
+}
+
 
 }
