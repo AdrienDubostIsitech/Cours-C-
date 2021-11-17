@@ -99,6 +99,7 @@ void DessinPendu(int Error)
 //Fonction qui permet au joueurs de soumettre une lettre
 void PlayerPropositionFunc(char &PlayerProposition)
 {
+    cout << endl;
     cout<< "Choisissez une lettre : ";
     cin >> PlayerProposition;
 }
@@ -126,7 +127,6 @@ void GameLoop(int LetterFound,int NumberOfLetter, bool &End, int &NumberError)
     //Tant que le joueur n'a pas gangé ou perdu on va lui proposer de Soumettre une lettre
     while(End == false)
     {
-        cout << ChoosenWord << endl;
         char PlayerProposition;
         PlayerPropositionFunc(PlayerProposition);
         int OldLetterFound = LetterFound;
