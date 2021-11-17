@@ -100,7 +100,7 @@ void PlayerPropositionFunc(char &PlayerProposition)
     cout<< "Choisissez une lettre : ";
     cin >> PlayerProposition;
 }
-void GameLoop(int LetterFound, int NumberOfLetter, bool &End, int &NumberError)
+void GameLoop(int LetterFound,int NumberOfLetter, bool &End, int &NumberError)
 {
 
     using Duree = std::chrono::duration<double>;
