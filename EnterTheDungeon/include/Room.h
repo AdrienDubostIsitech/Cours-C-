@@ -3,9 +3,9 @@
 
 enum class TypeRoom
 {
-    Ennemy,
-    Treasure,
-    Empty,
+    Ennemy = 'E',
+    Treasure = 'T',
+    Empty = 'V',
 };
 
 class Room
@@ -13,9 +13,10 @@ class Room
     public:
         Room(TypeRoom);
         virtual ~Room();
+        TypeRoom Type;
 
     protected:
-        TypeRoom Type;
+
 
     private:
 };
