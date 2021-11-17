@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 int LetterFound{0};
 bool win = false;
 int NumberError{0};
@@ -15,6 +16,7 @@ int NumberOfLetter{0};
 
 int main()
 {
+    //J'ai préféré utiliser la fonction rand car c'est celle que je maitrise le plus
     srand(time(NULL));
 
     cout <<"---------------------------------------- Bienvenue au Pendu ! --------------------------------------------------"<< endl;
@@ -22,5 +24,5 @@ int main()
 
     GameLoop(LetterFound, NumberOfLetter, win, NumberError);
 
-        return 0;
+    return 0;
 }

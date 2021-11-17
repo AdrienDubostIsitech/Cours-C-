@@ -2,6 +2,9 @@
 #define WORDLIST_H_INCLUDED
 #include<string>
 
+    //fichiers Header contenant toutes les constantes utilisés c'est à dire :
+    //La liste de mots
+    //Le nombre maximale d'erreurs
 
     const auto MAX_NUMBER_ERROR{9};
 
