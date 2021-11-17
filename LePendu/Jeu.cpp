@@ -177,7 +177,7 @@ std::string ChooseAWord(int &NumberOfLetter)
     NumberOfLetter = ChoosenWord.length();
     cout<< NumberOfLetter<<endl;
 
-    for(int j = 0; j < sizeof(ChoosenWord)/sizeof(ChoosenWord[0]); j++)
+    for(int j = 0; j < ChoosenWord.length(); j++)
     {
             cout<<" -- ";
     }
