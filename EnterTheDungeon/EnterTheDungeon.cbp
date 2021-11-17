@@ -34,8 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/DungeonManager.h" />
 		<Unit filename="include/Room.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/DungeonManager.cpp" />
 		<Unit filename="src/Room.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -1,16 +1,20 @@
 # depslib dependency file v1.0
-1637146934 source:c:\users\adrie\documents\cours_isitech\enterthedungeon\main.cpp
+1637148686 source:c:\users\adrie\documents\cours_isitech\enterthedungeon\main.cpp
 	<iostream>
 	<vector>
 	"Room.h"
+	"DungeonManager.h"
 
 1637139620 source:c:\users\adrie\documents\cours_isitech\enterthedungeon\src\room.cpp
 	"Room.h"
 
 1637144770 c:\users\adrie\documents\cours_isitech\enterthedungeon\include\room.h
 
-1637146566 source:c:\users\adrie\documents\cours_isitech\enterthedungeon\src\dungeonmanager.cpp
+1637148640 source:c:\users\adrie\documents\cours_isitech\enterthedungeon\src\dungeonmanager.cpp
 	"DungeonManager.h"
+	<iostream>
 
-1637146566 c:\users\adrie\documents\cours_isitech\enterthedungeon\include\dungeonmanager.h
+1637148398 c:\users\adrie\documents\cours_isitech\enterthedungeon\include\dungeonmanager.h
+	<vector>
+	"Room.h"
 
