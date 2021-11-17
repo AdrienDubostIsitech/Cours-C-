@@ -3,10 +3,28 @@
 #include <string>
 #include <array>
 #include <list>
+#include <map>
 using namespace std;
 
 int main()
 {
+    map<string, int>noteRPI;
+    noteRPI["Yohann"] = 15;
+    noteRPI["Gregoire"] = 11;
+    noteRPI["Nicolas"] = 13;
+    noteRPI["Julien"] = 17;
+    noteRPI["Naoufal"] = 16;
+
+    //make_pair retourne un truc du type que tu veux envoyé dans ce cas là un clé et une valeur
+    noteRPI.insert(make_pair("Evan", 14));
+
+    for(map<string, int>::iterator it = noteRPI.begin(); it != noteRPI.end(); it++)
+    {
+        // ondéclare une paire des types préciser
+        pair<string, int> note =*it;
+        cout << "La note de " << note.first << " est: " <<note.second << endl;
+    }
+
     //plusieurs conteneurs
     //séquentiels
 
