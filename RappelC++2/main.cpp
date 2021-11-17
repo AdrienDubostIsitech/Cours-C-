@@ -4,26 +4,36 @@
 #include <array>
 #include <list>
 #include <map>
+#include <algorithm>
 using namespace std;
+
+
+ bool test(string name)
+{
+    return (name.size() > 6);
+}
 
 int main()
 {
-    map<string, int>noteRPI;
-    noteRPI["Yohann"] = 15;
-    noteRPI["Gregoire"] = 11;
-    noteRPI["Nicolas"] = 13;
-    noteRPI["Julien"] = 17;
-    noteRPI["Naoufal"] = 16;
 
-    //make_pair retourne un truc du type que tu veux envoyé dans ce cas là un clé et une valeur
-    noteRPI.insert(make_pair("Evan", 14));
 
-    for(map<string, int>::iterator it = noteRPI.begin(); it != noteRPI.end(); it++)
+
+    vector<string> Noms =
     {
-        // ondéclare une paire des types préciser
-        pair<string, int> note =*it;
-        cout << "La note de " << note.first << " est: " <<note.second << endl;
-    }
+        "Julien",
+        "Adiren",
+        "Yohann",
+        "Yohann",
+        "Brice",
+        "Gregoire",
+        "Nicolas",
+        "Evan",
+        "Naoufel"
+    };
+
+cout << count_if(Noms.begin(), Noms.end(), test);
+
+
 
     //plusieurs conteneurs
     //séquentiels
