@@ -73,6 +73,8 @@ Dungeon.resize(DungeonMap.size());
 
  while (End == false)
 {
+        cout << " Dans cette salle il y a : " << static_cast<char>(Dungeon[hauteur][largeur]->Type) << endl;
+
 
         cout << " Vous etes sur la case : " << "[" <<hauteur << "]" << " " << "[" << largeur << "]" << endl;
         cout << " Vous pouvez vous déplacer au :"<< endl;
@@ -103,7 +105,7 @@ Dungeon.resize(DungeonMap.size());
             {
                 if(hauteur > 0)
                 {
-                    hauteur++;
+                    hauteur--;
                     break;
                 }
                 else
@@ -116,7 +118,7 @@ Dungeon.resize(DungeonMap.size());
             {
                 if(hauteur < 2)
                 {
-                    hauteur--;
+                    hauteur++;
                     break;
                 }
                 else
