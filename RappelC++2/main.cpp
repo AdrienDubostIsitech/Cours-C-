@@ -7,7 +7,8 @@
 #include <algorithm>
 using namespace std;
 
-
+bool test(string name);
+// marche pour retourner un booléen
  bool test(string name)
 {
     return (name.size() > 6);
@@ -21,7 +22,7 @@ int main()
     vector<string> Noms =
     {
         "Julien",
-        "Adiren",
+        "Adrien",
         "Yohann",
         "Yohann",
         "Brice",

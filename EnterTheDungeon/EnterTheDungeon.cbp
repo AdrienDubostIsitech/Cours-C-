@@ -36,9 +36,13 @@
 		</Compiler>
 		<Unit filename="Constantes.h" />
 		<Unit filename="include/DungeonManager.h" />
+		<Unit filename="include/Ennemy.h" />
+		<Unit filename="include/Player.h" />
 		<Unit filename="include/Room.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/DungeonManager.cpp" />
+		<Unit filename="src/Ennemy.cpp" />
+		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Room.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

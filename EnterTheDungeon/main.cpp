@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Room.h"
+#include "time.h"
 #include "DungeonManager.h"
 
 using namespace std;
@@ -15,10 +16,12 @@ int main()
  cout<<" ---------------------------- To The Dungeon -----------------------------"<<endl;
 
 
+std::vector<vector<int>> Map;
+srand(time(NULL));
+DungeonManager* Dungeon = new DungeonManager(Map);
+Player* player = new Player(100, 50, 0, hauteur, largeur);
 
-DungeonManager* Dungeon = new DungeonManager();
-
- Dungeon->DirectionChoice(hauteur, largeur, End);
+ Dungeon->DirectionChoice(hauteur, largeur, End, player);
 
 
 }
