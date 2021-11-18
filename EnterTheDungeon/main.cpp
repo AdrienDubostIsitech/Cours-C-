@@ -15,7 +15,14 @@ int main()
  cout<<" ------------------------------- Welcome ---------------------------------"<<endl;
  cout<<" ---------------------------- To The Dungeon -----------------------------"<<endl;
 
-
+ if(hauteur | largeur)
+ {
+    cout << "oui" << endl;
+ }
+if(hauteur && largeur)
+ {
+    cout << "oui" << endl;
+ }
 std::vector<vector<int>> Map;
 srand(time(NULL));
 DungeonManager* Dungeon = new DungeonManager(Map);

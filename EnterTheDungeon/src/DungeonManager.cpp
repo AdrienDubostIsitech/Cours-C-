@@ -253,7 +253,7 @@ void DungeonManager::GetTreasure(Player *player)
         {
             int x = rand() % 200 +75;
             player->Gold += x;
-            cout << "Vous avez gagné " << x << " pièces d'or ! " <<endl;
+            cout << "Vous avez gagne " << x << " pièces d'or ! " <<endl;
             cout << "Votre or s'eleve a :" << player->Gold << endl;
             break;
         }
